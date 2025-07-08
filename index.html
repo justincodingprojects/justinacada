@@ -1,10 +1,212 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon - TimeTick</title>
+  <link rel="icon" type="image/png" href="favicon.ico" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    :root {
+      --accent: mediumspringgreen;
+      --bg-dark: #121212;
+      --bg-darker: #0a0a0a;
+      --text-light: #f5f5f5;
+      --text-dim: #aaaaaa;
+      --gray: #cccccc;
+      --light: #1e1e1e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: fadeIn 1s ease-out;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      background-color: var(--bg-dark);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+      min-height: calc(100vh - 60px);
+      margin-top: 60px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      animation: slideUp 1s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      max-width: 600px;
+      margin-bottom: 3rem;
+      animation: slideUp 1s ease-out 0.4s forwards;
+      opacity: 0;
+    }
+
+    .cta-button {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: fadeIn 1s ease-out 0.6s forwards;
+      opacity: 0;
+    }
+
+    .cta-button:hover {
+      background: var(--accent);
+      color: var(--bg-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 250, 154, 0.2);
+    }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .accent {
+      color: var(--accent);
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
-    <h1>Soon to be a computer-related website</h1>
+  <header>
+    <div class="logo-container">
+      <div class="logo">TimeTick</div>
+    </div>
+  </header>
+
+  <main>
+    <h1>Coming Soon</h1>
+    <p class="tagline">
+      We are working hard to bring you something awesome. Stay tuned!
+    </p>
+    <button class="cta-button">Notify Me</button>
+  </main>
+
+  <footer>
+    © 2025 Ticodium Frameworks. All rights reserved.
+  </footer>
+
+  <script>
+    // source: trust me bro
+    var beanber = 1;
+    const main = document.querySelector("main");
+    const notifButton = document.querySelector(".cta-button");
+    const tagline = document.querySelector(".tagline");
+    const iatetoomanybeans = {
+        1: "source: trust me, bro",
+        4: "really, trust me, bro",
+        8: "nah, you don't get it, trust me, bro",
+        12: "i'm telling you, bro, trust me on this one",
+        16: "like, 100% trust me, bro",
+        20: "okay, but for real, bro, you gotta trust me",
+        24: "i swear on my one and only crush, bro you gotta trust me",
+        28: "not even joking, bro, trust me or else-",
+        32: "trust me, bro, I got a PhD in yapano-this",
+        36: "I have a friend who's an expert (he's rlly not), bro, trust me",
+        40: "you know my friend, right? trust me, bro, he said it",
+        44: "trust me, bro, it's on the internet, it must be true",
+        48: "you'll see, bro, just give it a sec…ooo i'm ticking it!-",
+        52: "trust me, bro, I did this last week and it worked",
+        56: "bro, the science checks out...pls trust me",
+        60: "look, trust me, bro, this is not a suggestion this is an ORDER",
+        64: "yk what u don't have to believe me, but still...trust me, bro",
+        69: "bro trust me PLSSSSS...this is the secret to everything!",
+        75: "ngl ts u be doing to me genuinely pmo >:(",
+        90: "icl tsu bdoin sm rn fr fr it pmo atm no cap but imo even tho idk how u still be movin like that its lit af rn and makes u tbe no kid & ily for bein a whole mf legend rn...PEACE! ✌️",
+        100: () => {
+            main.removeChild(tagline);
+            let img = document.createElement("img");
+            img.className = "tagline";
+            img.style.width = "256px";
+            img.style.paddingTop = "3rem";
+            img.src = "./why.gif";
+            main.appendChild(img);
+            notifButton.innerText = "don't you dare...";
+        },
+        105: () => {
+            notifButton.disabled = true;
+            notifButton.innerText = "ok that's it you just lost your button privileges RIGHT NOW! >:(";
+        }
+    };
+    notifButton.onclick =  () => {
+        const action = iatetoomanybeans[beanber];
+        if (typeof action === "function") {
+            action();
+        } else if (action) {
+            tagline.innerText = action;
+        }
+        beanber++;
+    };
+  </script>
 </body>
 </html>
