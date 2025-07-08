@@ -159,9 +159,9 @@
   <script>
     // source: trust me bro
     var beanber = 1;
+    var tagline = document.querySelector(".tagline");
     const main = document.querySelector("main");
     const notifButton = document.querySelector(".cta-button");
-    const tagline = document.querySelector(".tagline");
     const iatetoomanybeans = {
         1: "source: trust me, bro",
         4: "really, trust me, bro",
@@ -191,15 +191,61 @@
             img.style.paddingTop = "3rem";
             img.src = "./why.gif";
             main.appendChild(img);
+            tagline = document.querySelector(".tagline");
             notifButton.innerText = "don't you dare...";
         },
         105: () => {
             notifButton.innerText = "...";
         },
         110: () => {
-            notifButton.disabled = true;
+            tagline.src = "./naw.gif";
+            tagline = document.querySelector(".tagline");
             notifButton.innerText = "yes click on that button like a good boy :)";
-        }
+        },
+        115: () => {
+          let vid = document.createElement("video");
+          let source = document.createElement("source");
+          vid.className = "why";
+          vid.autoplay = true;
+          vid.controls = false;
+          vid.style.backgroundColor = "black";
+          vid.style.position = "fixed";
+          vid.style.top = "50%";
+          vid.style.left = "50%";
+          vid.style.translate = "-50% -50%";
+          vid.style.objectFit = "scale-down";
+          vid.style.minWidth = "100%";
+          vid.style.minHeight = "100vh";
+          vid.style.zIndex = "1001";
+          vid.style.animation = "3s linear 0s fadeIn, 4s linear 22s reverse fadeIn"
+          source.src = "./markdance.mp4";
+          source.type = "video/mp4";
+          vid.appendChild(source);
+          vid.onanimationend = (e) => {
+            if (e.elapsedTime == 4.0) {
+              document.body.removeChild(vid);
+            }
+          };
+          document.body.insertBefore(vid, document.body.firstChild);
+          vid.play();
+          notifButton.innerText = "just why..";
+          setTimeout(() => {
+            tagline.src = "./lol.gif";
+            tagline = document.querySelector(".tagline");
+            notifButton.innerText = "yea you watched that video like a good boy :)";
+          }, 5000);
+        },
+        130: () => {
+          tagline.src = "./ballin.gif";
+          tagline = document.querySelector(".tagline");
+          notifButton.innerText = "if you're a good boy keep pressing it! >:)";
+        },
+        200: () => {
+          notifButton.disabled = true;
+          tagline.src = "./uwastedurtime.gif";
+          tagline = document.querySelector(".tagline");
+          notifButton.innerText = "congrats, i just wasted your time :)";
+        },
     };
     notifButton.onclick =  () => {
         const action = iatetoomanybeans[beanber];
